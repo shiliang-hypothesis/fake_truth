@@ -3,11 +3,14 @@
 [ext_resource type="Script" uid="uid://iieudmy1p707" path="res://spike.gd" id="1_7k7bx"]
 [ext_resource type="Texture2D" uid="uid://nfsdm5y5kqug" path="res://resources/new_resources/thorn.png" id="2_5sso0"]
 [ext_resource type="Script" uid="uid://n7g28og8ulv3" path="res://scripts/TagComponent.gd" id="2_tggh8"]
+[ext_resource type="Script" uid="uid://dwpgmqirqc4rs" path="res://scripts/BodyMasker.gd" id="3_bodym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tggh8"]
 size = Vector2(16, 16)
 
 [node name="spike" type="Area2D" unique_id=1394898450]
+collision_layer = 64
+collision_mask = 1028
 script = ExtResource("1_7k7bx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1730197743]
@@ -23,3 +26,7 @@ shape = SubResource("RectangleShape2D_tggh8")
 [node name="TagComponent" type="Node" parent="." unique_id=450057424]
 script = ExtResource("2_tggh8")
 metadata/_custom_type_script = "uid://n7g28og8ulv3"
+
+[node name="BodyMasker" type="Node" parent="." unique_id=450057425]
+script = ExtResource("3_bodym")
+metadata/_custom_type_script = "uid://dwpgmqirqc4rs"

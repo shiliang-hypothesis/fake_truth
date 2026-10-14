@@ -1,0 +1,17 @@
+[gd_resource type="SystemFont" format=3]
+
+; 标题/按钮用的点阵风字体。
+; 中文字体里没有现成的像素字体（机器上无 Zpix/Fusion 之类），
+; 而黑体在小字号 + 关闭抗锯齿 + 关闭超采样时，正好落在画布像素网格上，
+; 被 canvas_items 放大 3 倍后就是规整的方块。
+;
+; hinting = 1（Light）：让笔画尽量对齐像素栅格，同时不破坏字形。
+; subpixel_positioning = 0（Disabled）：字形不会被摆在半像素上，
+;   这是"放大后边缘干净"的前提。
+; antialiasing = 0（None）：硬边，不要灰度过渡。
+
+[resource]
+font_names = PackedStringArray("SimHei", "黑体", "Microsoft YaHei")
+antialiasing = 0
+subpixel_positioning = 0
+hinting = 1

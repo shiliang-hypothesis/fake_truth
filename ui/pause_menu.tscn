@@ -1,0 +1,135 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_pause"]
+[ext_resource type="Script" path="res://ui/PixelButton.gd" id="2_pixbtn"]
+[ext_resource type="SystemFont" path="res://ui/fonts/pixel_title.tres" id="3_font_title"]
+[ext_resource type="SystemFont" path="res://ui/fonts/pixel_body.tres" id="4_font_body"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+layer = 90
+
+[node name="Root" type="Control" parent="."]
+process_mode = 3
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pause")
+
+[node name="Title" type="Label" parent="Root"]
+offset_left = 104.0
+offset_top = 34.0
+offset_right = 280.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.918, 0.984, 0.98, 1)
+theme_override_colors/font_outline_color = Color(0.016, 0.11, 0.129, 1)
+theme_override_colors/font_shadow_color = Color(0.031, 0.216, 0.251, 0.95)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("3_font_title")
+text = "暂停"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rule" type="ColorRect" parent="Root"]
+offset_left = 152.0
+offset_top = 64.0
+offset_right = 232.0
+offset_bottom = 65.0
+color = Color(0.11, 0.29, 0.314, 1)
+
+[node name="ResumeButton" type="Button" parent="Root"]
+offset_left = 124.0
+offset_top = 70.0
+offset_right = 260.0
+offset_bottom = 92.0
+script = ExtResource("2_pixbtn")
+
+[node name="Label" type="Label" parent="Root/ResumeButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.812, 0.937, 0.925, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("3_font_title")
+text = "继续游戏"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Root"]
+offset_left = 124.0
+offset_top = 95.0
+offset_right = 260.0
+offset_bottom = 117.0
+script = ExtResource("2_pixbtn")
+
+[node name="Label" type="Label" parent="Root/RestartButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.812, 0.937, 0.925, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("3_font_title")
+text = "重新开始"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="Button" parent="Root"]
+offset_left = 124.0
+offset_top = 120.0
+offset_right = 260.0
+offset_bottom = 142.0
+script = ExtResource("2_pixbtn")
+
+[node name="Label" type="Label" parent="Root/MenuButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.812, 0.937, 0.925, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("3_font_title")
+text = "返回主菜单"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Button" parent="Root"]
+offset_left = 124.0
+offset_top = 145.0
+offset_right = 260.0
+offset_bottom = 167.0
+script = ExtResource("2_pixbtn")
+
+[node name="Label" type="Label" parent="Root/QuitButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.812, 0.937, 0.925, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("3_font_title")
+text = "退出游戏"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hint" type="Label" parent="Root"]
+offset_left = 104.0
+offset_top = 176.0
+offset_right = 280.0
+offset_bottom = 188.0
+theme_override_colors/font_color = Color(0.298, 0.478, 0.502, 1)
+theme_override_font_sizes/font_size = 11
+theme_override_fonts/font = ExtResource("4_font_body")
+text = "ESC 继续"
+horizontal_alignment = 1
+vertical_alignment = 1

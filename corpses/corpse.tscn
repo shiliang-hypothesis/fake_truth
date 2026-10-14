@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dcnspjybw3ots"]
+
+[ext_resource type="Script" uid="uid://dfy58alnltxst" path="res://corpses/corpse.gd" id="1_sda0q"]
+[ext_resource type="Script" uid="uid://n7g28og8ulv3" path="res://scripts/TagComponent.gd" id="3_dnttv"]
+[ext_resource type="Script" uid="uid://dwpgmqirqc4rs" path="res://scripts/BodyMasker.gd" id="4_dnttv"]
+
+[node name="corpse" type="RigidBody2D" unique_id=824268797]
+collision_layer = 256
+collision_mask = 1285
+linear_damp = 4.0
+script = ExtResource("1_sda0q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=551120318]
+position = Vector2(-3, -16)
+region_enabled = true
+region_rect = Rect2(96, 220, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1563936078]
+position = Vector2(0, -5)
+
+[node name="TagComponent" type="Node" parent="." unique_id=105230965]
+script = ExtResource("3_dnttv")
+metadata/_custom_type_script = "uid://n7g28og8ulv3"
+
+[node name="BodyMasker" type="Node" parent="." unique_id=1730701557]
+script = ExtResource("4_dnttv")
+metadata/_custom_type_script = "uid://dwpgmqirqc4rs"

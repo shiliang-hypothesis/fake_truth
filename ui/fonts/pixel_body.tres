@@ -1,0 +1,14 @@
+[gd_resource type="SystemFont" format=3]
+
+; 正文/小字用的点阵风字体。
+; 宋体（SimSun）本身就是为屏幕小字号设计的，13px 以下自带"点阵感"，
+; 再配合关闭抗锯齿 + 关闭超采样，被放大 3 倍后就是经典的中文点阵字。
+;
+; 想换成真正的像素字体（如 Zpix / Fusion Pixel），
+; 只要把 font_names 里加上字体名即可 —— Godot 会取第一个可用的。
+
+[resource]
+font_names = PackedStringArray("SimSun", "NSimSun", "宋体", "SimHei")
+antialiasing = 0
+subpixel_positioning = 0
+hinting = 1

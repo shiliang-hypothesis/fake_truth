@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cr8ib64jvo8rv"]
+
+[ext_resource type="PackedScene" uid="uid://dcnspjybw3ots" path="res://corpses/corpse.tscn" id="1_gqb7b"]
+[ext_resource type="Texture2D" uid="uid://cbpcv518vmpuh" path="res://resources/knight.png" id="2_nrd8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_728ky"]
+size = Vector2(16, 8)
+
+[node name="CorpseOfPlayer" unique_id=824268797 instance=ExtResource("1_gqb7b")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=551120318]
+texture = ExtResource("2_nrd8i")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1563936078]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_728ky")

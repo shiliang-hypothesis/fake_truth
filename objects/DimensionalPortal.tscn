@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://jdu4lddt4nwm"]
+
+[ext_resource type="Script" uid="uid://c18j8rhv0dbw2" path="res://scripts/Teleporter.gd" id="1_cu6ni"]
+[ext_resource type="Texture2D" uid="uid://24t70jrkvbi5" path="res://resources/new_resources/Dimensional_Portal.png" id="2_yth1w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahrse"]
+atlas = ExtResource("2_yth1w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpfq8"]
+atlas = ExtResource("2_yth1w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vbqk"]
+atlas = ExtResource("2_yth1w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_laavw"]
+atlas = ExtResource("2_yth1w")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlsis"]
+atlas = ExtResource("2_yth1w")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdgp8"]
+atlas = ExtResource("2_yth1w")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2m5cy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahrse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpfq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vbqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_laavw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlsis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdgp8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuehi"]
+size = Vector2(17, 32)
+
+[node name="DimensionalPortal" type="Area2D" unique_id=1803230666]
+script = ExtResource("1_cu6ni")
+metadata/_custom_type_script = "uid://c18j8rhv0dbw2"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1098690429]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_2m5cy")
+autoplay = "default"
+frame_progress = 0.47342914
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2140999413]
+position = Vector2(1, -16)
+shape = SubResource("RectangleShape2D_tuehi")

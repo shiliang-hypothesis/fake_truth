@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://km0edyffgkua"]
+
+[ext_resource type="Script" uid="uid://7l818mwgyhro" path="res://Rock.gd" id="1_rock"]
+[ext_resource type="Texture2D" uid="uid://73gxe4isq5cn" path="res://resources/new_resources/rock.png" id="2_rock"]
+[ext_resource type="Script" uid="uid://n7g28og8ulv3" path="res://scripts/TagComponent.gd" id="3_tag"]
+[ext_resource type="Script" uid="uid://dwpgmqirqc4rs" path="res://scripts/BodyMasker.gd" id="4_mask"]
+[ext_resource type="Script" uid="uid://c6ywjhcgpbkyq" path="res://scripts/Hitbox.gd" id="5_hit"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rock"]
+radius = 7.0
+height = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hit"]
+radius = 9.0
+
+[node name="Rock" type="RigidBody2D" unique_id=740121167]
+collision_layer = 256
+collision_mask = 1285
+linear_damp = 1.0
+script = ExtResource("1_rock")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=857460993]
+position = Vector2(0, -1)
+texture = ExtResource("2_rock")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646536685]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_rock")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=118929597]
+collision_layer = 0
+collision_mask = 4112
+monitoring = false
+script = ExtResource("5_hit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=346003508]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_hit")
+
+[node name="TagComponent" type="Node" parent="." unique_id=1499368266]
+script = ExtResource("3_tag")
+metadata/_custom_type_script = "uid://n7g28og8ulv3"
+
+[node name="BodyMasker" type="Node" parent="." unique_id=1730701557]
+script = ExtResource("4_mask")
+metadata/_custom_type_script = "uid://dwpgmqirqc4rs"

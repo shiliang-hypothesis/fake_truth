@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="fake_truth"
-run/main_scene="uid://cf4jqvmxqs80w"
-config/features=PackedStringArray("4.6", "Forward Plus")
+run/main_scene="res://ui/main_menu.tscn"
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameState="*uid://b2k116gnfpgeq"
+_mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
+Game="*uid://dh2gvmrjx1fkw"
+PauseMenu="*res://ui/pause_menu.tscn"
 
 [display]
 
@@ -29,7 +31,11 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/com.timothyqiu.animation-resetter/plugin.cfg")
+enabled=PackedStringArray("res://addons/com.timothyqiu.animation-resetter/plugin.cfg", "res://addons/godot_ai/plugin.cfg")
+
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
 
 [input]
 
@@ -50,7 +56,7 @@ jump={
 }
 kick={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":74,"key_label":0,"unicode":106,"location":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":120,"location":0,"echo":false,"script":null)
 ]
 }
 use={
@@ -68,15 +74,37 @@ move_down={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
 ]
 }
+restart={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
+]
+}
+grab={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":74,"key_label":0,"unicode":106,"location":0,"echo":false,"script":null)
+]
+}
+interact={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":102,"location":0,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
 2d_physics/layer_1="RealEnvironment"
 2d_physics/layer_2="DeathEnvironment"
-2d_physics/layer_3="Player"
-2d_physics/layer_4="Enemy"
-2d_physics/layer_5="PlayerHurtbox"
-2d_physics/layer_6="EnemyHurtbox"
+2d_physics/layer_3="RealPlayer"
+2d_physics/layer_4="DeathPlayer"
+2d_physics/layer_5="RealPlayerHurtbox"
+2d_physics/layer_6="DeathPlayerHurtbox"
+2d_physics/layer_7="RealSensor"
+2d_physics/layer_8="DeathSensor"
+2d_physics/layer_9="RealBody"
+2d_physics/layer_10="DeathBody"
+2d_physics/layer_11="RealEnemy"
+2d_physics/layer_12="DeathEnemy"
+2d_physics/layer_13="EnemyHurtbox"
 2d_physics/canvas_textures/default_texture_filter=1
 
 [physics]

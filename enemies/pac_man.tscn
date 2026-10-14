@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://b2he338tuj7cd" path="res://resources/slime_green.png" id="2_c58s6"]
 [ext_resource type="Script" uid="uid://c3f2ye8w4ye8v" path="res://enemies/pac_man.gd" id="2_d4gjc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uib6"]
+size = Vector2(7.5, 11)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_d4gjc"]
 radius = 6.0
 
@@ -587,21 +590,22 @@ target_position = Vector2(-8, 0)
 [node name="PlayerChecker" type="RayCast2D" parent="Graphics" parent_id_path=PackedInt32Array(1509638856) index="2" unique_id=1599496060]
 position = Vector2(-1, -8)
 target_position = Vector2(-94, 0)
-collision_mask = 5
+collision_mask = 4
 
 [node name="FloorChecker" type="RayCast2D" parent="Graphics" parent_id_path=PackedInt32Array(1509638856) index="3" unique_id=436641813]
 position = Vector2(-10, -1)
 target_position = Vector2(0, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Graphics/Hitbox" parent_id_path=PackedInt32Array(1742535690) index="0" unique_id=664809461]
-position = Vector2(0, -6)
-shape = SubResource("CircleShape2D_d4gjc")
+position = Vector2(-3.25, -5.5)
+shape = SubResource("RectangleShape2D_7uib6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Graphics/Hurtbox" parent_id_path=PackedInt32Array(1530127427) index="0" unique_id=674163468]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_d4gjc")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=533181415]
+visible = false
 position = Vector2(0.5, -6)
 shape = SubResource("RectangleShape2D_d4gjc")
 

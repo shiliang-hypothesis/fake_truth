@@ -5,9 +5,12 @@
 [ext_resource type="Script" uid="uid://c6ywjhcgpbkyq" path="res://scripts/Hitbox.gd" id="2_orwns"]
 [ext_resource type="Script" uid="uid://dhdc2o6fa8rpq" path="res://scripts/Hurtbox.gd" id="3_a6vjd"]
 [ext_resource type="Script" uid="uid://c3300j71wjvjc" path="res://scripts/Stats.gd" id="5_07tka"]
+[ext_resource type="Script" uid="uid://n7g28og8ulv3" path="res://scripts/TagComponent.gd" id="6_3t1x0"]
+[ext_resource type="Script" uid="uid://dwpgmqirqc4rs" path="res://scripts/BodyMasker.gd" id="7_epsnb"]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1163602713]
-collision_layer = 8
+collision_layer = 1024
+collision_mask = 261
 script = ExtResource("1_7frlh")
 
 [node name="Graphics" type="Node2D" parent="." unique_id=1509638856]
@@ -20,11 +23,25 @@ collision_mask = 16
 script = ExtResource("2_orwns")
 metadata/_custom_type_script = "uid://c6ywjhcgpbkyq"
 
+[node name="TagComponent" type="Node" parent="Graphics/Hitbox" unique_id=1099992318]
+script = ExtResource("6_3t1x0")
+
+[node name="BodyMasker" type="Node" parent="Graphics/Hitbox" unique_id=1796847961]
+script = ExtResource("7_epsnb")
+
 [node name="Hurtbox" type="Area2D" parent="Graphics" unique_id=1530127427]
-collision_layer = 32
+collision_layer = 4096
 collision_mask = 0
 script = ExtResource("3_a6vjd")
 metadata/_custom_type_script = "uid://dhdc2o6fa8rpq"
+
+[node name="TagComponent" type="Node" parent="Graphics/Hurtbox" unique_id=971100003]
+script = ExtResource("6_3t1x0")
+metadata/_custom_type_script = "uid://n7g28og8ulv3"
+
+[node name="BodyMasker" type="Node" parent="Graphics/Hurtbox" unique_id=971100004]
+script = ExtResource("7_epsnb")
+metadata/_custom_type_script = "uid://dwpgmqirqc4rs"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=533181415]
 
@@ -37,3 +54,11 @@ metadata/_custom_type_script = "uid://cveiitgvhbt7c"
 [node name="Stats" type="Node" parent="." unique_id=861592997]
 script = ExtResource("5_07tka")
 metadata/_custom_type_script = "uid://c3300j71wjvjc"
+
+[node name="TagComponent" type="Node" parent="." unique_id=962000509]
+script = ExtResource("6_3t1x0")
+metadata/_custom_type_script = "uid://n7g28og8ulv3"
+
+[node name="BodyMasker" type="Node" parent="." unique_id=971100005]
+script = ExtResource("7_epsnb")
+metadata/_custom_type_script = "uid://dwpgmqirqc4rs"

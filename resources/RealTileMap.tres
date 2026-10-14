@@ -1,0 +1,30 @@
+[gd_resource type="TileSet" format=3 uid="uid://bykdk7x0flljs"]
+
+[ext_resource type="Texture2D" uid="uid://cpf31dkgr4xvt" path="res://resources/new_resources/tileset.png" id="1_mlrp4"]
+[ext_resource type="Texture2D" uid="uid://dr7o2bd5ryj55" path="res://resources/world_tileset.png" id="2_62i51"]
+[ext_resource type="Texture2D" uid="uid://ckoi0xp1hrnh4" path="res://resources/new_resources/savepoint.png" id="3_qrlar"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wse8f"]
+texture = ExtResource("1_mlrp4")
+8:9/0 = 0
+8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:10/0 = 0
+1:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ic0uy"]
+texture = ExtResource("2_62i51")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hiqwa"]
+texture = ExtResource("3_qrlar")
+0:0/animation_columns = 2
+0:0/animation_speed = 4.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 1284
+sources/0 = SubResource("TileSetAtlasSource_wse8f")
+sources/1 = SubResource("TileSetAtlasSource_ic0uy")
+sources/3 = SubResource("TileSetAtlasSource_hiqwa")
